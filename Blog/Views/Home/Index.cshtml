@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Article>
+@{
+
+    ViewData["Title"] = "Блог";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <br />
+    <ul>
+        @foreach(var article in Model)
+        {
+            <li>
+                <a asp-controller="Home" asp-action="Article" asp-route-id="@article.Id">
+                    @article.Name
+                </a>
+                <br />
+                <a asp-controller="Home" asp-action="Article" asp-route-id="@article.Id">
+                    @article.Description
+                </a>
+
+            </li>
+        }
+    </ul>
+</div>
